@@ -288,6 +288,10 @@ class NagmapReborn {
                 if (this.hosts[h].currentStatus == STATUS.HOSTS.down) {
                     status = "DOWN";
                 }
+                if (this.hosts[h].currentStatus == STATUS.HOSTS.up) {
+                    status = "UP";
+                }
+
                 if (status)
                     $(`#${status.toLowerCase()}Hosts`).prepend(`<div onclick="openPopup('${h}');" class="changesBarLine ${status} news" id="${h}-${status}" style="opacity:1; max-height: 80px;">${this.hosts[h].alias} - (${i18next.t('waiting')})</div>`);
             }
